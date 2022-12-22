@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.1.8 | MIT License | https://tailwindcss.com
+! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -30,6 +30,7 @@
 2. Prevent adjustments of font size after orientation changes in iOS.
 3. Use a more readable tab size.
 4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
 */
 
 html {
@@ -44,6 +45,8 @@ html {
   /* 3 */
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* 4 */
+  font-feature-settings: normal;
+  /* 5 */
 }
 
 /*
@@ -410,54 +413,13 @@ video {
   height: auto;
 }
 
-*, ::before, ::after {
-  --tw-border-spacing-x: 0;
-  --tw-border-spacing-y: 0;
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
-  --tw-scroll-snap-strictness: proximity;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
-  --tw-ring-offset-width: 0px;
-  --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 0.5);
-  --tw-ring-offset-shadow: 0 0 #0000;
-  --tw-ring-shadow: 0 0 #0000;
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
+/* Make elements with the HTML hidden attribute stay hidden by default */
+
+[hidden] {
+  display: none;
 }
 
-::-webkit-backdrop {
+*, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -571,6 +533,10 @@ video {
   bottom: 70px;
 }
 
+.bottom-3 {
+  bottom: 0.75rem;
+}
+
 .left-6 {
   left: 1.5rem;
 }
@@ -587,25 +553,34 @@ video {
   top: -0.25rem;
 }
 
-.bottom-4 {
-  bottom: 1rem;
+.z-10 {
+  z-index: 10;
 }
 
-.bottom-3 {
-  bottom: 0.75rem;
+.z-0 {
+  z-index: 0;
 }
 
-.left-2 {
-  left: 0.5rem;
+.-z-0 {
+  z-index: 0;
 }
 
-.left-1 {
-  left: 0.25rem;
+.-z-10 {
+  z-index: -10;
+}
+
+.-z-30 {
+  z-index: -30;
 }
 
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.my-\[30px\] {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .mx-\[16px\] {
@@ -638,6 +613,14 @@ video {
   margin-bottom: 0.5rem;
 }
 
+.mr-12 {
+  margin-right: 3rem;
+}
+
+.ml-7 {
+  margin-left: 1.75rem;
+}
+
 .mt-\[-30px\] {
   margin-top: -30px;
 }
@@ -654,16 +637,24 @@ video {
   margin-top: -50px;
 }
 
+.ml-\[100px\] {
+  margin-left: 100px;
+}
+
+.ml-1 {
+  margin-left: 0.25rem;
+}
+
+.-mt-12 {
+  margin-top: -3rem;
+}
+
 .mt-\[90px\] {
   margin-top: 90px;
 }
 
 .mb-2 {
   margin-bottom: 0.5rem;
-}
-
-.ml-1 {
-  margin-left: 0.25rem;
 }
 
 .mb-\[1px\] {
@@ -682,40 +673,36 @@ video {
   margin-left: auto;
 }
 
-.mt-7 {
-  margin-top: 1.75rem;
-}
-
-.mb-1\.5 {
-  margin-bottom: 0.375rem;
-}
-
 .mb-1 {
   margin-bottom: 0.25rem;
 }
 
-.mb-4 {
-  margin-bottom: 1rem;
+.mt-7 {
+  margin-top: 1.75rem;
 }
 
-.mb-5 {
-  margin-bottom: 1.25rem;
+.-ml-10 {
+  margin-left: -2.5rem;
 }
 
-.ml-\[100px\] {
-  margin-left: 100px;
+.-ml-20 {
+  margin-left: -5rem;
 }
 
-.-mt-20 {
-  margin-top: -5rem;
+.-ml-12 {
+  margin-left: -3rem;
 }
 
-.-mt-16 {
-  margin-top: -4rem;
+.-ml-16 {
+  margin-left: -4rem;
 }
 
-.-mt-12 {
-  margin-top: -3rem;
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
+.mt-5 {
+  margin-top: 1.25rem;
 }
 
 .flex {
@@ -730,8 +717,32 @@ video {
   height: 315px;
 }
 
-.h-\[70px\] {
-  height: 70px;
+.h-\[90px\] {
+  height: 90px;
+}
+
+.h-\[99px\] {
+  height: 99px;
+}
+
+.h-\[130px\] {
+  height: 130px;
+}
+
+.h-\[110px\] {
+  height: 110px;
+}
+
+.h-\[83px\] {
+  height: 83px;
+}
+
+.h-\[76px\] {
+  height: 76px;
+}
+
+.h-\[80px\] {
+  height: 80px;
 }
 
 .h-\[116px\] {
@@ -746,76 +757,32 @@ video {
   height: 148px;
 }
 
-.h-\[99px\] {
-  height: 99px;
-}
-
-.h-\[90px\] {
-  height: 90px;
-}
-
-.h-\[80px\] {
-  height: 80px;
-}
-
-.h-\[130px\] {
-  height: 130px;
-}
-
-.h-\[117px\] {
-  height: 117px;
-}
-
-.h-\[83px\] {
-  height: 83px;
-}
-
-.h-\[76px\] {
-  height: 76px;
-}
-
-.h-\[110px\] {
-  height: 110px;
-}
-
 .w-11\/12 {
   width: 91.666667%;
+}
+
+.w-1\/2 {
+  width: 50%;
 }
 
 .w-\[373px\] {
   width: 373px;
 }
 
-.w-\[70px\] {
-  width: 70px;
-}
-
-.w-\[288px\] {
-  width: 288px;
-}
-
-.w-full {
-  width: 100%;
+.w-\[90px\] {
+  width: 90px;
 }
 
 .w-\[99px\] {
   width: 99px;
 }
 
-.w-\[90px\] {
-  width: 90px;
-}
-
-.w-\[80px\] {
-  width: 80px;
-}
-
 .w-\[140px\] {
   width: 140px;
 }
 
-.w-\[103px\] {
-  width: 103px;
+.w-\[100px\] {
+  width: 100px;
 }
 
 .w-\[89px\] {
@@ -826,12 +793,24 @@ video {
   width: 76px;
 }
 
-.w-\[100px\] {
-  width: 100px;
+.w-\[80px\] {
+  width: 80px;
+}
+
+.w-\[288px\] {
+  width: 288px;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .max-w-screen-2xl {
   max-width: 1536px;
+}
+
+.max-w-none {
+  max-width: none;
 }
 
 .list-inside {
@@ -890,14 +869,9 @@ video {
   background-color: rgb(58 50 41 / var(--tw-bg-opacity));
 }
 
-.bg-\[\#4B4E5E\] {
+.bg-\[\#303F4A\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(75 78 94 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#fff\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  background-color: rgb(48 63 74 / var(--tw-bg-opacity));
 }
 
 .bg-\[\#2C4548\] {
@@ -915,14 +889,9 @@ video {
   background-color: rgb(54 68 80 / var(--tw-bg-opacity));
 }
 
-.bg-\[\#303F4A\] {
+.bg-\[\#4B4E5E\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(48 63 74 / var(--tw-bg-opacity));
-}
-
-.object-cover {
-  -o-object-fit: cover;
-     object-fit: cover;
+  background-color: rgb(75 78 94 / var(--tw-bg-opacity));
 }
 
 .object-fill {
@@ -967,16 +936,20 @@ video {
   text-align: center;
 }
 
-.text-\[113px\] {
-  font-size: 113px;
-}
-
 .text-\[54px\] {
   font-size: 54px;
 }
 
 .text-\[24px\] {
   font-size: 24px;
+}
+
+.text-\[28px\] {
+  font-size: 28px;
+}
+
+.text-\[113px\] {
+  font-size: 113px;
 }
 
 .text-\[32px\] {
@@ -1005,6 +978,10 @@ video {
 
 .font-medium {
   font-weight: 500;
+}
+
+.leading-\[69px\] {
+  line-height: 69px;
 }
 
 .leading-7 {
@@ -1036,14 +1013,14 @@ video {
   color: rgb(172 172 172 / var(--tw-text-opacity));
 }
 
-.text-\[\#D4CCCC\] {
-  --tw-text-opacity: 1;
-  color: rgb(212 204 204 / var(--tw-text-opacity));
-}
-
 .text-\[\#0FB1E1\] {
   --tw-text-opacity: 1;
   color: rgb(15 177 225 / var(--tw-text-opacity));
+}
+
+.text-\[\#D4CCCC\] {
+  --tw-text-opacity: 1;
+  color: rgb(212 204 204 / var(--tw-text-opacity));
 }
 
 .text-\[\#56B5A5\] {
@@ -1069,36 +1046,18 @@ video {
   opacity: 0.8;
 }
 
-.marker\:text-lg *::marker {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
 .marker\:text-2xl *::marker {
   font-size: 1.5rem;
   line-height: 2rem;
-}
-
-.marker\:text-black *::marker {
-  color: rgb(0 0 0 );
 }
 
 .marker\:text-\[\#5AA2C6\] *::marker {
   color: rgb(90 162 198 );
 }
 
-.marker\:text-lg::marker {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
 .marker\:text-2xl::marker {
   font-size: 1.5rem;
   line-height: 2rem;
-}
-
-.marker\:text-black::marker {
-  color: rgb(0 0 0 );
 }
 
 .marker\:text-\[\#5AA2C6\]::marker {
